@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     withCredentials([string(credentialsId: 'DockerHub', variable: 'DOCKERHUB_TOKEN')]) {
-                        sh 'echo $DOCKERHUB_TOKEN | docker login -u rpillaiakshay --password-stdin'
+                        sh 'echo $DOCKERHUB_TOKEN | docker login -u niha070 --password-stdin'
                     }
                     sh 'docker push Nihad-07/node-app:latest'
                 }
