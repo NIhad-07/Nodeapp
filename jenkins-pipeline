@@ -12,7 +12,7 @@ pipeline {
                         extensions: [],
                         userRemoteConfigs: [[
                             credentialsId: 'GitHub',  // GitHub token credential ID
-                            url: 'https://github.com/rpillaiakshay/Nodeapp'
+                            url: 'https://github.com/Nihad-07/Nodeapp'
                         ]]
                     )
                 }
@@ -28,7 +28,7 @@ pipeline {
         stage('Build Node JS Docker Image') {
             steps {
                 script {
-                    sh 'docker build -t rpillaiakshay/node-app:latest .'
+                    sh 'docker build -t Nihad-07/node-app:latest .'
                 }
             }
         }
@@ -39,7 +39,7 @@ pipeline {
                     withCredentials([string(credentialsId: 'DockerHub', variable: 'DOCKERHUB_TOKEN')]) {
                         sh 'echo $DOCKERHUB_TOKEN | docker login -u rpillaiakshay --password-stdin'
                     }
-                    sh 'docker push rpillaiakshay/node-app:latest'
+                    sh 'docker push Nihad-07/node-app:latest'
                 }
             }
         }
