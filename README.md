@@ -76,7 +76,7 @@ The objective of this project is to set up a CI/CD pipeline to build, test, and 
    mkdir Nodeapp
    cd Nodeapp
    git init
-   git remote add origin https://github.com/rpillaiakshay/Nodeapp.git
+   git remote add origin https://github.com/NIhad-07/Nodeapp.git
    git add .
    git commit -m "Deploy NodeApp to AWS EKS"
    git push -u origin main
@@ -129,7 +129,7 @@ The objective of this project is to set up a CI/CD pipeline to build, test, and 
 ## Output
 
 - Successful pipeline execution in Jenkins.
-- Docker image pushed to Docker Hub (`rpillaiakshay/node-app:latest`).
+- Docker image pushed to Docker Hub (`niha070/node-app:latest`).
 - Application deployed to Kubernetes cluster.
 - Monitor system status using Grafana-Prometheus.
 
@@ -137,7 +137,7 @@ The objective of this project is to set up a CI/CD pipeline to build, test, and 
 
 ## Links
 
-- **DockerHub Image**: `docker pull rpillaiakshay/node-app:latest`
+- **DockerHub Image**: `docker pull niha070/node-app:latest`
 
 ---
 
