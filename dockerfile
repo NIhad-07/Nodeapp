@@ -1,20 +1,27 @@
-# Use the official Node.js image as the base image
-FROM node:14
+# Use a maintained Node.js version
+FROM node:18
 
-# Set the working directory
+# Create app directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy dependency files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm install
+# Install production dependencies
+RUN npm install --omit=dev
 
-# Copy the rest of the application code
+# Copy application source
 COPY . .
 
-# Expose the application port
+# Add a non-root user (optional for security)
+RUN adduser --disabled-password appuser
+USER appuser
+
+# Expose port
 EXPOSE 3000
 
-# Start the application
+# Optional healthcheck
+HEALTHCHECK CMD curl --fail http://localhost:3000 || exit 1
+
+# Run the app
 CMD ["node", "server.js"]
